@@ -1,0 +1,125 @@
+<div class="col PAGEHEADTEXT">Welcome to {{ CompanyName }}</div>
+<div class="col PAGEHEADTEXT" style="margin-bottom: 1;">
+  Application Form for {{ AdvertTitle }}
+</div>
+<div class="container content-body mt-4">
+  <div *ngIf="Step == 0; then Applicant0"></div>
+  <div *ngIf="Step == 1; then Applicant1"></div>
+  <div *ngIf="Step == 2; then Applicant2"></div>
+  <div *ngIf="Step == 3; then Applicant3"></div>
+  <div *ngIf="Step == 4; then Applicant4"></div>
+  <div *ngIf="Step == 1 || Step == 2" class="mt-5">
+    <button class="custom-button" style="float: right;">NEXT</button>
+  </div>
+</div>
+
+<ng-template #Applicant0>
+  <div class="col applicant-welcome-text" style="color: black;">
+    <p>Application Full</p>
+    <br />
+    <br />
+    <p class="NORMALTEXT">
+      We are sorry but we are no longer taking applications for the role of
+      [AdvertTitle].
+    </p>
+  </div>
+</ng-template>
+
+<ng-template #Applicant1>
+  <div class="col NORMALTEXT">
+    <p>This application form is in [2]/[3] sections.</p>
+
+    <p>
+      In Section 1 please enter your details and upload your CV and a covering
+      letter.
+    </p>
+
+    <p>
+      In Section 2 we ask you some questions about what experience qualifies you
+      for the [AdvertTitle] role.
+    </p>
+
+    <p>
+      In Section [3]/[4] you will take a photo on your webcam from which we
+      extract a psychometric profile which will accompany your application. If
+      you dont have a webcam on your PC please use your phone
+    </p>
+  </div>
+  <div>
+    <p class="FORMFIELDHEADTEXT">Section 1. Your Details</p>
+
+    <input
+      class="FORMFIELDTEXT custom-border"
+      id="name"
+      placeholder="Name"
+      type="text"
+    />
+    <br />
+    <br />
+    <input
+      class="FORMFIELDTEXT custom-border"
+      id="email"
+      placeholder="E-mail"
+      type="text"
+    />
+    <br />
+    <br />
+    <input
+      class="FORMFIELDTEXT custom-border"
+      id="Telephone"
+      placeholder="Telephone"
+      type="text"
+    />
+    <br />
+    <br />
+    <div class="custom-file1 FORMFIELDTEXT">
+      <input type="file" class="custom-file-input1 FORMFIELDTEXT" id="CV" />
+      <label
+        style="color: #5f7c96;"
+        class="custom-file-label custom-border"
+        for="CV"
+        >Attach CV File</label
+      >
+      <br />
+      <br />
+      <label class="info-label-upload">PDF or Word no more than 20mb</label>
+    </div>
+    <br />
+    <br />
+    <div class="custom-file1 FORMFIELDTEXT">
+      <input type="file" class="custom-file-input1" id="CoverLetter" />
+      <label
+        style="color: #5f7c96;"
+        class="custom-file-label custom-border"
+        for="CoverLetter"
+        >Attach Cover Letter</label
+      >
+      <br />
+      <br />
+      <label class="info-label-upload">PDF or Word no more than 20mb</label>
+    </div>
+  </div>
+
+  <label class="mt-5 FORMFIELDTEXT" style="color: #5f7c96; margin-right: 5px;"
+    >I agree with the Terms and Conditions and the Privacy Policy
+  </label>
+  <input type="checkbox" />
+</ng-template>
+
+<ng-template #Applicant2>
+  <div class="col">
+    step2
+  </div>
+</ng-template>
+
+<ng-template #Applicant3>
+  <div class="col">
+    step 3
+  </div>
+</ng-template>
+
+<ng-template #Applicant4>
+  <div class="col">
+    step4
+  </div>
+</ng-template>

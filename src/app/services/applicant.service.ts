@@ -3,14 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ApplicantServiceService {
+export class ApplicantService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  public getPositionDetails(id: number): Observable<any> {
-    let url = '/api/AccountType';
+  public getPositionDetails(linkId: string): Observable<any> {
+    const url = '/api/AccountType';
 
     return this.httpClient.get<any>(url);
   }
